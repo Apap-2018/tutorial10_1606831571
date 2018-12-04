@@ -18,7 +18,7 @@ export class UpdatePasien extends React.Component {
 		this.handleFormSubmit = this.handleFormSubmit.bind(this)
 		Appointment.getDetailPasien(this.props.match.params.id).then(response => {
 			//get response pasien
-			if(response.status == 200){
+			if(response.status === 200){
 				this.setState({
 					loading:false,
 					pasien: response.result
@@ -60,7 +60,7 @@ export class UpdatePasien extends React.Component {
 		})
 
 		Appointment.updateStatusPasien(dataJson).then (response => {
-			if(response.status == 200){
+			if(response.status === 200){
 				this.setState({
 					loading:false,
 					pasien: response.result
